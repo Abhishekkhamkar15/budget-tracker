@@ -1,0 +1,7 @@
+[build]
+builder = "python"
+buildDir = "backend"
+
+[deploy]
+start = "gunicorn app:app"
+deployDir = "backend"
