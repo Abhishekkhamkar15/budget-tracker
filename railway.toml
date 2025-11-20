@@ -1,6 +1,10 @@
 [build]
-builder = "Dockerfile"
+buildCommand = "pip install -r requirements.txt"
 
 [deploy]
 startCommand = "gunicorn app:app"
 healthcheckPath = "/health"
+port = 5000
+
+[cloud]
+env = "python"
