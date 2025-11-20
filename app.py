@@ -350,6 +350,10 @@ def update_transaction(user, id):
 
     db.session.commit()
     return jsonify({"message": "Updated"})
+# ---------------------- HEALTHCHECK ----------------------
+@app.route("/health")
+def health():
+    return {"status": "ok"}, 200
 
 # ---------------------- RUN SERVER ----------------------
 if __name__ == "__main__":
