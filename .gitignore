@@ -1,0 +1,13 @@
+# Ignore environment variables
+backend/.env
+
+# Python
+__pycache__/
+instance/*.db-journal
+
+# Node
+frontend/node_modules/
+frontend/build/
+
+# Misc
+.DS_Store
