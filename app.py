@@ -265,7 +265,8 @@ def forgot_password():
         return jsonify({"message": "If account exists, email sent"})
 
     token = serializer.dumps(email, salt="reset")
-    reset_link = f"http://localhost:3000/reset-password?token={token}"
+    reset_link = f"https://budget-tracker-gold-alpha.vercel.app/reset-password?token={token}"
+
 
     print("RESET LINK:", reset_link)
 
