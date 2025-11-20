@@ -1,7 +1,6 @@
 [build]
-builder = "python"
-buildDir = "backend"
+buildCommand = "pip install -r backend/requirements.txt"
 
 [deploy]
-start = "gunicorn app:app"
-deployDir = "backend"
+startCommand = "gunicorn app:app"
+rootDirectory = "backend"
