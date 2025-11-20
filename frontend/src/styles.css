@@ -1,0 +1,496 @@
+/* ---------- Base variables + root ---------- */
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #0b78ff;
+  --danger: #d9534f;
+  --success: #28a745;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --yellow: #ffd54a;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition: background .25s, color .25s;
+}
+.app-root { min-height: 100vh; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 18px;
+  background: linear-gradient(90deg,#ffffff 0%, #f7f9fc 100%);
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow);
+}
+
+.nav-left, .nav-right { display:flex; align-items:center; gap:12px; }
+.menu-icon-btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:8px;
+  background:transparent; border:none; cursor:pointer;
+}
+.menu-icon-btn:hover { background: rgba(11,120,255,0.06); transform: translateY(-1px); transition: .12s; }
+
+.nav-title { font-weight:700; font-size:18px; margin-left:6px; }
+
+/* user badge on right side */
+.user-badge {
+  display:flex; align-items:center; gap:8px;
+  padding:6px 10px; border-radius:999px;
+  background: rgba(11,120,255,0.06);
+  color: var(--accent);
+  font-weight:600;
+}
+.user-badge:hover {
+  box-shadow: 0 6px 14px rgba(11,120,255,0.10);
+  transform: translateY(-1px);
+  transition: 0.15s;
+}
+
+.user-icon { font-size:20px; }
+.icon-btn {
+  background:transparent; border:none; cursor:pointer; padding:6px; border-radius:8px;
+}
+.icon-btn:hover { background: rgba(15,23,42,0.04); transform: translateY(-1px); }
+
+.dropdown-panel {
+  position:absolute;
+  right: 0;
+  top: 52px;
+  min-width:180px;
+  background:var(--card);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+  padding:8px;
+  border: 1px solid rgba(15,23,42,0.06);
+  z-index: 80;
+}
+.dropdown-panel .drop-item {
+  display:flex; gap:8px; align-items:center;
+  width:100%; padding:10px; text-decoration:none; color:var(--text);
+  background:transparent; border:none; cursor:pointer; border-radius:6px; text-align:left;
+}
+.dropdown-panel .drop-item:hover { background: rgba(11,120,255,0.06); }
+
+/* ---------- Main container ---------- */
+.main-container { max-width:1100px; margin:24px auto; padding:0 20px; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding:18px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15,23,42,0.04);
+  margin-bottom:18px;
+}
+.h-title { font-size:18px; margin:0 0 12px 0; font-weight:700; }
+
+/* summary row */
+.summary-grid {
+  display:flex; gap:16px; flex-wrap:wrap;
+}
+.summary-item {
+  flex:1; min-width:160px;
+  background: linear-gradient(180deg, rgba(11,120,255,0.06), rgba(255,255,255,0));
+  padding:12px; border-radius:10px;
+}
+.summary-value { font-size:18px; font-weight:700; }
+
+/* charts row responsive */
+.charts-row { display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:center; }
+.chart-card { flex: 1 1 320px; display:flex; justify-content:center; align-items:center; }
+
+/* form grids */
+.form-grid { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.input, .select {
+  padding:10px 12px; border-radius:8px; border:1px solid rgba(15,23,42,0.08); min-width: 180px;
+}
+.input[type="date"] { padding:9px 10px; }
+
+.center-row { display:flex; justify-content:center; margin-top:12px; }
+.btn {
+  background: var(--accent);
+  color:white; border:none; padding:10px 16px; border-radius:8px; cursor:pointer;
+  font-weight:700;
+}
+.btn.gray { background:#6c757d; }
+.btn:active { transform: translateY(1px); }
+
+.tx-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.tx-row {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:12px; border-radius:10px; border:1px solid rgba(15,23,42,0.04);
+}
+.tx-left { flex:1; }
+.tx-title { font-weight:700; }
+.tx-meta { color: var(--muted); font-size:13px; }
+
+.btn:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  transition: 0.15s ease;
+  box-shadow: 0 6px 14px rgba(11,120,255,0.08);
+}
+
+.small-btn { padding:6px 10px; border-radius:8px; border:none; cursor:pointer; font-weight:600; color:white; }
+.small-btn.edit { background: var(--success); margin-right:8px; }
+.small-btn.delete { background: var(--danger); }
+
+/* ✅ NEW — Cancel button same as delete button */
+.small-btn.cancel {
+  background: var(--yellow) !important;
+  color: white !important;
+}
+.small-btn.cancel:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+.small-btn:hover { filter:brightness(.95); transform:translateY(-1px); transition:.12s; }
+
+/* ---------- Dark mode ---------- */
+body.dark-mode {
+  --bg: #0b0f14;
+  --card: #0f1720;
+  --text: #e6eef8;
+  --muted:#9aa6b2;
+  --accent:var(--yellow);
+  --shadow: 0 8px 28px rgba(2,6,23,0.6);
+}
+body.dark-mode .navbar { background: #071423; border-bottom-color: rgba(255,255,255,0.04); }
+body.dark-mode .user-badge { background: rgba(255,255,255,0.06); color: var(--accent); }
+body.dark-mode .dropdown-panel { background: #0b1220; border-color: rgba(255,255,255,0.04); }
+
+/* Make hamburger icon, theme icon, and logout text/icons yellow in dark mode */
+body.dark-mode .hamburger,
+body.dark-mode .theme-ico svg,
+body.dark-mode .logout-btn,
+body.dark-mode .logout-btn svg {
+  color: var(--accent) !important;
+  fill: var(--accent) !important;
+}
+
+/* dark-mode icon hover glow (yellow) */
+body.dark-mode .theme-ico:hover {
+  box-shadow: 0 0 18px rgba(255,213,74,0.32);
+  transform: scale(1.06);
+  transition: all .16s;
+  border-radius:8px;
+}
+
+.btn.gray { background:#6c757d; color:#fff; }
+.btn.gray:hover { background:#5a6268; }
+
+/* small responsive */
+@media (max-width: 820px) {
+  .charts-row { flex-direction:column; }
+  .summary-grid { flex-direction:column; }
+  .tx-row { flex-direction:column; align-items:flex-start; }
+  .nav-right { gap:8px; }
+}
+
+/* Login Page ---------- */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #0b0f14;
+}
+
+.login-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.login-input:focus {
+  border-color: #0b78ff;
+  box-shadow: 0 0 0 3px rgba(11,120,255,0.2);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #0b78ff, #7a5cff);
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity .2s, transform .2s;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.login-footer {
+  margin-top: 16px;
+  color: #444;
+  font-size: 14px;
+}
+
+.login-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.app-title {
+  font-size: 38px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #0b78ff, #7a5cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.charts-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.charts-title-row .h-title { margin: 0; }
+
+/* placeholders */
+input.input::placeholder {
+  color: rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Search bar */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 18px;
+}
+.search-box .search-input {
+  width: 50vw;
+  max-width: 600px;
+  padding: 12px 48px 12px 48px;
+  font-size: 15px;
+  background: #ffffff;
+  border: 2px solid rgba(0,0,0,0.45);
+  border-radius: 999px;
+}
+
+.search-input::placeholder {
+  font-weight: 700;
+  color: #3d3f43;
+}
+
+.search-icon-inside {
+  position: absolute;
+  left: 18px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+/* Dark mode search */
+body.dark-mode .search-input { background:#0f1720; border-color:rgba(255,255,255,0.40); }
+body.dark-mode .search-input::placeholder { color:#e2e6ec; }
+body.dark-mode .search-icon-inside { color:#f0f3f7; }
+
+/* fix dropdown shake */
+.user-dropdown {
+  position:absolute;
+  top:46px;
+  right:0;
+  width:180px;
+  z-index:9999;
+}
+
+/* ------------------------------------------------------
+   🚀 ONLY RESPONSIVE FIXES ADDED BELOW (NO CHANGES ABOVE)
+   ------------------------------------------------------ */
+
+/* FIX 1 — Charts disappearing (Recharts must have height) */
+.chart-card {
+  min-height: 350px;
+}
+
+/* FIX 2 — Better stacking on smaller screens */
+@media (max-width: 768px) {
+  .chart-card {
+    min-height: 380px;
+    width: 100%;
+  }
+}
+
+/* FIX 3 — Search bar full width on small screens */
+@media (max-width: 680px) {
+  .search-box {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .search-box .search-input {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* FIX 4 — Navbar responsive wrap */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* FIX 5 — Transaction rows wrap on mobile */
+@media (max-width: 520px) {
+  .tx-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* FIX — Lock user dropdown stability */
+.user-badge {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  transform: none !important;
+}
+
+.calculator-btn {
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.calculator-btn:hover {
+  background: rgba(15,23,42,0.04);
+  transform: translateY(-1px);
+  transition: .12s;
+}
+
+/* ------------------------------------------
+   FIX — Move calculator dropdown below button
+   ------------------------------------------ */
+.calculator-dropdown {
+  position: absolute !important;
+  top: 60px !important;
+  right:70px !important;
+  z-index: 9999;
+}
+
+/* ----------------- FOOTER (SCREEN ONLY) ----------------- */
+.footer-screen-only {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  margin-top: 40px;
+  background: #f3f3f3;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Back to Top button */
+.back-to-top-btn {
+  padding: 12px 26px;
+  background: #37475a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.back-to-top-btn:hover {
+  background: #485769;
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+/* ❌ Hide footer in PDF exports */
+@media print {
+  .footer-screen-only {
+    display: none !important;
+  }
+}
+
+/* ----------------- DARK MODE FOOTER ----------------- */
+body.dark-mode .footer-screen-only {
+  background: #0b0f14 !important;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+body.dark-mode .back-to-top-btn {
+  background: var(--accent);
+  color: black;
+  box-shadow: 0 0 12px rgba(255,213,74,0.4);
+}
+
+body.dark-mode .back-to-top-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
