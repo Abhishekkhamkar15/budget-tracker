@@ -1,7 +1,7 @@
 [build]
-builder = "python"
+builder = "NIXPACKS"
 buildCommand = "pip install -r requirements.txt"
 
 [deploy]
 startCommand = "gunicorn app:app"
-rootDirectory = "backend"
+healthcheckPath = "/"
