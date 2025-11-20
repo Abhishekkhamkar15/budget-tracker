@@ -4,7 +4,8 @@ import { useNavigate, Link } from "react-router-dom";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const API = "http://localhost:5000";
+  const API = "https://budget-tracker-production-ae41.up.railway.app";
+
   const navigate = useNavigate();
 
   const handleLogin = async () => {

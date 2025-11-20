@@ -58,7 +58,8 @@ def cookie_settings():
         secure=True,
         samesite="None",
         path="/",
-        domain="localhost"
+        domain="budget-tracker-production-ae41.up.railway.app"
+
     )
 
 # ---------------------- AUTO CLEAR OLD COOKIES (FIXED OPTIONS) ----------------------

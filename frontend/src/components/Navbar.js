@@ -3,7 +3,8 @@ import { FaBars, FaUserCircle } from "react-icons/fa";
 import { BsSun, BsMoonStars } from "react-icons/bs";
 import { FiLogOut, FiSearch } from "react-icons/fi";
 
-const API = "http://localhost:5000";
+const API = "https://budget-tracker-production-ae41.up.railway.app";
+
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);

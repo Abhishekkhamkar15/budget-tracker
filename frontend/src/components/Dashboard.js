@@ -9,7 +9,8 @@ import jsPDF from "jspdf";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 
-const API = "http://localhost:5000";
+const API = "https://budget-tracker-production-ae41.up.railway.app";
+
 
 function safeConfirm(message) {
   return window.confirm(message);
