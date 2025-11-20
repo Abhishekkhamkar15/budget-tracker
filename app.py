@@ -25,7 +25,10 @@ app = Flask(__name__)
 CORS(
     app,
     supports_credentials=True,
-    origins=["http://localhost:3000"]   # preflight now works
+    origins=[
+        "http://localhost:3000",
+        "https://budget-tracker-gold-alpha.vercel.app"
+    ]
 )
 
 # ---------------------- DATABASE ----------------------
