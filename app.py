@@ -28,10 +28,10 @@ CORS(
     origins=[
         "http://localhost:3000",
         "https://budget-tracker-gold-alpha.vercel.app",
-        "https://budget-tracker-git-main-abhishekkhamkar15s-projects.vercel.app",
-        "https://budget-tracker-pg0f9qxe3-abhishekkhamkar15s-projects.vercel.app"
+        "https://budget-tracker-jrbo.onrender.com"   # 👈 add this
     ]
 )
+
 
 
 # ---------------------- DATABASE ----------------------
@@ -61,9 +61,9 @@ def cookie_settings():
         secure=True,
         samesite="None",
         path="/",
-        domain="budget-tracker-production-ae41.up.railway.app"
-
+        domain="budget-tracker-jrbo.onrender.com"  # 👈 use Render domain
     )
+
 
 
 # ---------------------- AUTO CLEAR OLD COOKIES (FIXED OPTIONS) ----------------------
