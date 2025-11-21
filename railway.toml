@@ -4,7 +4,7 @@ buildCommand = "pip install -r requirements.txt"
 [deploy]
 startCommand = "gunicorn app:app"
 healthcheckPath = "/health"
-port = 5000
+port = 8080
 
 [cloud]
 env = "python"
