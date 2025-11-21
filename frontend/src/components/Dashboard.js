@@ -9,7 +9,7 @@ import jsPDF from "jspdf";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 
-const API = "https://budget-tracker-production-ae41.up.railway.app";
+const API = "https://budget-tracker-jrbo.onrender.com";
 
 
 function safeConfirm(message) {

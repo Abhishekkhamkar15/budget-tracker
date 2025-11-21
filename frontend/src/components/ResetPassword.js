@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-const API = "https://budget-tracker-production-ae41.up.railway.app";
-
+const API = "https://budget-tracker-jrbo.onrender.com";
 
 export default function ResetPassword() {
   const [searchParams] = useSearchParams();

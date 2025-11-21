@@ -3,7 +3,7 @@ import { FaBars, FaUserCircle } from "react-icons/fa";
 import { BsSun, BsMoonStars } from "react-icons/bs";
 import { FiLogOut, FiSearch } from "react-icons/fi";
 
-const API = "https://budget-tracker-production-ae41.up.railway.app";
+const API = "https://budget-tracker-jrbo.onrender.com";
 
 
 export default function Navbar() {

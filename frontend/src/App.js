@@ -9,8 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 
-const API = "https://budget-tracker-production-ae41.up.railway.app";
-
+const API = "https://budget-tracker-jrbo.onrender.com";
 
 export default function App() {
   const [isAuth, setIsAuth] = useState(null);
