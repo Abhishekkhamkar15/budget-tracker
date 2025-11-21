@@ -27,9 +27,12 @@ CORS(
     supports_credentials=True,
     origins=[
         "http://localhost:3000",
-        "https://budget-tracker-gold-alpha.vercel.app"
+        "https://budget-tracker-gold-alpha.vercel.app",
+        "https://budget-tracker-git-main-abhishekkhamkar15s-projects.vercel.app",
+        "https://budget-tracker-pg0f9qxe3-abhishekkhamkar15s-projects.vercel.app"
     ]
 )
+
 
 # ---------------------- DATABASE ----------------------
 instance_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "instance")
@@ -58,8 +61,9 @@ def cookie_settings():
         secure=True,
         samesite="None",
         path="/",
-
+        domain=".up.railway.app"
     )
+
 
 # ---------------------- AUTO CLEAR OLD COOKIES (FIXED OPTIONS) ----------------------
 @app.before_request
